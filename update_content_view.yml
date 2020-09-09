@@ -1,0 +1,18 @@
+---
+- name: update a satellite content view
+  hosts: "{{ HOSTS | default('satellite') }}"
+  vars_files: satellite_connection_credentials.yml
+  collections:
+    - redhat.satellite
+  tasks:
+    - name: update a content view
+      content_view_version:
+        username: "{{ satellite_username }}"
+        password: "{{ satellite_password }}"
+        server_url: "{{ satellite_server_url }}"
+        content_view: "{{ satellite_cv_name }}"
+        organization: "{{ satellite_org_name }}"
+        lifecycle_environments:
+          - Library
+          - "{{ satellite_lc_env }}"
+        description: Published on {{ lookup('pipe', 'date') }}
