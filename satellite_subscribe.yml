@@ -1,0 +1,11 @@
+---
+- name: subscribe a RHEL system to Satellite
+  hosts: all
+  become: true
+  tasks:
+    - name: subscribe to satellite
+      redhat_subscription:
+        activationkey: "{{ sat_akey_id }}"
+        org_id: "{{sat_org_id }}"
+        state: present
+        auto_attach: true
