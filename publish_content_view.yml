@@ -14,5 +14,5 @@
         organization: "{{ satellite_org_name }}"
         lifecycle_environments:
           - Library
-          - "{{ satellite_lc_env }}"
+          - "{{ satellite_lc_env | default(omit) }}"
         description: Published on {{ lookup('pipe', 'date') }}
