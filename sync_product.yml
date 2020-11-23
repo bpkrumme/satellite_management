@@ -1,0 +1,14 @@
+---
+- name: synchronize a repository in Satellite
+  hosts: "{{ HOSTS | default('satellite') }}"
+  vars_files: satellite_connection_credentials.yml
+  collections:
+    - redhat.satellite
+  tasks:
+    - name: synchronize a Satellite repo
+      repository_sync:
+        username: "{{ satellite_username }}"
+        password: "{{ satellite_password }}"
+        server_url: "{{ satellite_server_url }}"
+        organization: "{{ satellite_org_name }}"
+        product: "{{ satellite_product }}"
