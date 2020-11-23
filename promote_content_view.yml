@@ -1,6 +1,6 @@
 ---
 - name: promote a satellite content view
-  hosts: "{{ HOSTS | default('satellite') }}"
+  hosts: all
   vars_files: satellite_connection_credentials.yml
   collections:
     - redhat.satellite

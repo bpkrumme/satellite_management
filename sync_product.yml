@@ -1,6 +1,6 @@
 ---
-- name: synchronize a repository in Satellite
-  hosts: "{{ HOSTS | default('satellite') }}"
+- name: synchronize a product in Satellite
+  hosts: all
   vars_files: satellite_connection_credentials.yml
   collections:
     - redhat.satellite
