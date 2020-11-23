@@ -1,11 +1,11 @@
 ---
-- name: update a satellite content view
+- name: promote a satellite content view
   hosts: all
   vars_files: satellite_connection_credentials.yml
   collections:
     - redhat.satellite
   tasks:
-    - name: update a content view
+    - name: promote a content view
       content_view_version:
         username: "{{ satellite_username }}"
         password: "{{ satellite_password }}"
