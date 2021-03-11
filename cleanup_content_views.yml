@@ -5,7 +5,7 @@
   collections:
     - redhat.satellite
   roles:
-    - role: redhat.satellite.content_view_version_cleanup:
+    - role: redhat.satellite.content_view_version_cleanup
       vars:
         satellite_username: "{{ satellite_username }}"
         satellite_password: "{{ satellite_password }}"
