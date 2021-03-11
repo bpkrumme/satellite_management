@@ -1,14 +1,15 @@
 ---
-- name: synchronize a product in Satellite
+- name: sync a satellite repository
   hosts: all
   vars_files: satellite_connection_credentials.yml
   collections:
     - redhat.satellite
   tasks:
-    - name: synchronize a Satellite product
+    - name: synchronize a Satellite repository
       repository_sync:
         username: "{{ satellite_management_username }}"
         password: "{{ satellite_management_password }}"
         server_url: "{{ satellite_management_server_url }}"
         organization: "{{ satellite_management_org_name }}"
-        product: "{{ satellite_management_product }}"
+        product: "{{ item }}"
+      loop: "{{ satellite_management_product }}"
