@@ -1,0 +1,9 @@
+---
+- name: install all available updates from satellite
+  hosts: all
+  become: true
+  tasks:
+    - name: install available updates
+      yum:
+        name: "*"
+        state: latest
