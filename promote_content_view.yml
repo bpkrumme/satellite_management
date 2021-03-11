@@ -15,4 +15,4 @@
         current_lifecycle_environment: "{{ current_lc_env }}"
         lifecycle_environments:
           - "{{ satellite_lc_env }}"
-        description: Promoted on {{ lookup('pipe', 'date') }}
+        description: Promoted to {{ satellite_lc_env }} on {{ lookup('pipe', 'date') }}
