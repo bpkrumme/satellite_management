@@ -7,8 +7,8 @@
   tasks:
     - name: synchronize a Satellite repo
       repository_sync:
-        username: "{{ satellite_username }}"
-        password: "{{ satellite_password }}"
-        server_url: "{{ satellite_server_url }}"
-        organization: "{{ satellite_org_name }}"
-        product: "{{ satellite_product }}"
+        username: "{{ satellite_management_username }}"
+        password: "{{ satellite_management_password }}"
+        server_url: "{{ satellite_management_server_url }}"
+        organization: "{{ satellite_management_org_name }}"
+        product: "{{ satellite_management_product }}"

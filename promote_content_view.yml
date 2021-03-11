@@ -7,12 +7,12 @@
   tasks:
     - name: promote a content view
       content_view_version:
-        username: "{{ satellite_username }}"
-        password: "{{ satellite_password }}"
-        server_url: "{{ satellite_server_url }}"
-        content_view: "{{ satellite_cv_name }}"
-        organization: "{{ satellite_org_name }}"
-        current_lifecycle_environment: "{{ current_lc_env }}"
+        username: "{{ satellite_management_username }}"
+        password: "{{ satellite_management_password }}"
+        server_url: "{{ satellite_management_server_url }}"
+        content_view: "{{ satellite_management_cv_name }}"
+        organization: "{{ satellite_management_org_name }}"
+        current_lifecycle_environment: "{{ satellite_management_current_lc_env }}"
         lifecycle_environments:
-          - "{{ satellite_lc_env }}"
-        description: Promoted to {{ satellite_lc_env }} on {{ lookup('pipe', 'date') }}
+          - "{{ satellite_management_lc_env }}"
+        description: Promoted to {{ satellite_management_lc_env }} on {{ lookup('pipe', 'date') }}

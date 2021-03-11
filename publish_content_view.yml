@@ -7,11 +7,11 @@
   tasks:
     - name: promote a content view
       content_view_version:
-        username: "{{ satellite_username }}"
-        password: "{{ satellite_password }}"
-        server_url: "{{ satellite_server_url }}"
-        content_view: "{{ satellite_cv_name }}"
-        organization: "{{ satellite_org_name }}"
+        username: "{{ satellite_management_username }}"
+        password: "{{ satellite_management_password }}"
+        server_url: "{{ satellite_management_server_url }}"
+        content_view: "{{ satellite_management_cv_name }}"
+        organization: "{{ satellite_management_org_name }}"
         lifecycle_environments:
           - Library
         description: Published on {{ lookup('pipe', 'date') }}

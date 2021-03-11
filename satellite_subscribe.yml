@@ -5,7 +5,7 @@
   tasks:
     - name: subscribe to satellite
       redhat_subscription:
-        activationkey: "{{ sat_akey_id }}"
-        org_id: "{{sat_org_id }}"
+        activationkey: "{{ satellite_management_akey_id }}"
+        org_id: "{{satellite_management_org_id }}"
         state: present
         auto_attach: true
