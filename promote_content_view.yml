@@ -1,6 +1,7 @@
 ---
 - name: promote a satellite content view
   hosts: all
+  gather_facts: false
   vars_files: satellite_connection_credentials.yml
   collections:
     - redhat.satellite

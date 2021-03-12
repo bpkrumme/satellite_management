@@ -1,6 +1,7 @@
 ---
 - name: clean up old satellite content content_views
   hosts: satellite.bk.lab
+  gather_facts: false
   vars_files: satellite_connection_credentials.yml
   collections:
     - redhat.satellite

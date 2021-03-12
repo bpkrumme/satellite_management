@@ -1,6 +1,7 @@
 ---
 - name: install all available updates from satellite
   hosts: all
+  gather_facts: false
   become: true
   tasks:
     - name: install available updates
