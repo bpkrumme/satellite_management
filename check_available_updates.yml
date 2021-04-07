@@ -8,6 +8,7 @@
       yum:
         list: updates
         update_cache: true
+        security: yes
       register: yumoutput
 
     - name: set the result count fact
