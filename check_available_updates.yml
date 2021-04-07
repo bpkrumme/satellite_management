@@ -1,10 +1,14 @@
 ---
-- name: install all available updates from satellite
+- name:  check for all available updates from satellite
   hosts: all
   gather_facts: false
   become: true
   tasks:
-    - name: install available updates
+    - name: check for available updates
       yum:
-        name: "*"
-        state: latest
+        list: updates
+        update_cache: true
+      register: yumoutput
+    - name: see the list of available updates per hosts
+      debug:
+        msg: "{{ yumoutput.results | map(attribute='name') | list }}"
