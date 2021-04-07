@@ -16,4 +16,4 @@
     - name: see the count of available updates per host only when updates available
       debug:
         msg: "There are {{ result_count }} available updates to install on {{ inventory_hostname }}"
-      when: result_count.value > 0
+      when: result_count > '0'
