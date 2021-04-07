@@ -9,6 +9,11 @@
         list: updates
         update_cache: true
       register: yumoutput
-    - name: see the list of available updates per hosts
+
+    - name: set the result count fact
+      set_fact:
+        result_count: "{{ yumoutput.results | map(attribute='name') | list| length }}"
+    - name: see the count of available updates per host only when updates available
       debug:
-        msg: "There are {{ yumoutput.results | map(attribute='name') | list| length }} available updates to install on {{ inventory_hostname }}"
+        msg: "There are {{ result_count }} available updates to install on {{ inventory_hostname }}"
+      when: result_count > 0
