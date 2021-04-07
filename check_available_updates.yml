@@ -11,4 +11,4 @@
       register: yumoutput
     - name: see the list of available updates per hosts
       debug:
-        msg: "{{ yumoutput.results | map(attribute='name') | list| length }}"
+        msg: "There are {{ yumoutput.results | map(attribute='name') | list| length }} available updates to install on {{ inventory_hostname }}"
