@@ -11,4 +11,4 @@
       register: yumoutput
     - name: see the list of available updates per hosts
       debug:
-        msg: "{{ yumoutput.results | map(attribute='name') | count }}"
+        msg: "{{ yumoutput.results | map(attribute='name') | length }}"
