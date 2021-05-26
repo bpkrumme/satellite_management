@@ -1,12 +1,12 @@
 ---
-- name: promote a satellite content view
+- name: publish a satellite content view
   hosts: all
   gather_facts: false
   vars_files: satellite_connection_credentials.yml
   collections:
     - redhat.satellite
   tasks:
-    - name: promote a content view
+    - name: publish a content view
       content_view_version:
         username: "{{ satellite_management_username }}"
         password: "{{ satellite_management_password }}"
