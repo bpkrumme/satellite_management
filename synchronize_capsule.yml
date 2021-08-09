@@ -1,8 +1,8 @@
 ---
-name: synchronizea capsule via hammer and shell module
-hosts: all
-become: true
-tasks:
-  - name: synchronize a capsule using hammer
-    shell:
-      cmd: hammer --quiet capsule content synchronize --name {{ satellite_management_capsule_name }}
+- name: synchronize a capsule via hammer and shell module
+  hosts: all
+  become: true
+  tasks:
+    - name: synchronize a capsule using hammer
+      shell:
+        cmd: hammer --quiet capsule content synchronize --name {{ satellite_management_capsule_name }}
