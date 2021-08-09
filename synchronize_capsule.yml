@@ -1,0 +1,7 @@
+---
+name: synchronizea capsule via hammer and shell module
+hosts: all
+become: true
+tasks:
+  shell:
+    cmd: hammer --quiet capsule content synchronize --name {{ satellite_management_capsule_name }}
