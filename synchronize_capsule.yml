@@ -1,6 +1,7 @@
 ---
 - name: synchronize a capsule via hammer and shell module
   hosts: all
+  gather_facts: false
   become: true
   tasks:
     - name: synchronize a capsule using hammer
