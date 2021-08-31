@@ -7,3 +7,7 @@
     - name: synchronize a capsule using hammer
       shell:
         cmd: hammer --quiet capsule content synchronize --name {{ satellite_management_capsule_name }}
+
+    - name: show playbook version
+      debug:
+        msg: This was run with playbook version {{ pb_vers }}
