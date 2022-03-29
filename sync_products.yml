@@ -11,7 +11,6 @@
         username: "{{ satellite_management_username }}"
         password: "{{ satellite_management_password }}"
         server_url: "{{ satellite_management_server_url }}"
-        foreman_validate_certs: False
         organization: "{{ satellite_management_org_name }}"
         product: "{{ item }}"
       loop: "{{ satellite_management_product }}"
