@@ -7,7 +7,7 @@
     - redhat.satellite
   tasks:
     - name: promote a content view
-      content_view_version:
+      redhat.satellite.content_view_version:
         username: "{{ satellite_management_username }}"
         password: "{{ satellite_management_password }}"
         server_url: "{{ satellite_management_server_url }}"

@@ -5,7 +5,7 @@
   become: true
   tasks:
     - name: reboot a system
-      reboot:
+      ansible.builtin.reboot:
         reboot_timeout: 1200
         msg: "Reboot intiated by Ansible for regular patching"
         pre_reboot_delay: 60

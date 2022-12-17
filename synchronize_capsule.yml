@@ -5,5 +5,5 @@
   become: true
   tasks:
     - name: synchronize a capsule using hammer
-      shell:
+      ansible.builtin.shell:
         cmd: hammer --quiet capsule content synchronize --name {{ satellite_management_capsule_name }}

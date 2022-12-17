@@ -4,7 +4,7 @@
   become: true
   tasks:
     - name: subscribe to satellite
-      redhat_subscription:
+      community.general.redhat_subscription:
         activationkey: "{{ satellite_management_akey_id }}"
         org_id: "{{satellite_management_org_id }}"
         state: present
